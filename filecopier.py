@@ -1,3 +1,2 @@
-import platform
-
-print(platform.system())
+import os
+import shutil

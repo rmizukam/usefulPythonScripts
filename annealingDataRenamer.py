@@ -6,11 +6,14 @@ import platform
 proj = 'CuPcAnnealing'
 initials = 'RM'
 tData = 'AFM'
+folder_on_Desktop = "220810"
 # =============================================================
 if platform.system() == 'Windows':
-    folder = "C:/Users/Rmizu/Desktop/220810"
+    folder = "C:/Users/Rmizu/Desktop"
+    folder = os.path.join(folder, folder_on_Desktop)
 elif platform.system() == 'Darwin':
     folder = '/users/rmizu/Desktop'
+    folder = os.path.join(folder, folder_on_Desktop)
 # =============================================================
 tdate = '20' + folder[-6:]
 pRAW = os.listdir(folder)
@@ -27,8 +30,8 @@ for f in pRAW:
         newName = newName + '.ibw'
         newName = os.path.join(folder, newName)
         oldName = os.path.join(folder, f)
-        print(newName)
-        print(oldName)
+        print("Old Name: {oldName}")
+        print("New Name: {newName}")
         os.rename(oldName, newName)
     # print(data.loc[:, "Sample"])
 
