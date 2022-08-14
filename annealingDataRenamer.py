@@ -1,11 +1,16 @@
 import os
 import re
 import pandas
+import platform
 # ==============================================================
 proj = 'CuPcAnnealing'
 initials = 'RM'
 tData = 'AFM'
-folder = "C:/Users/Rmizu/Desktop/220810"
+# =============================================================
+if platform.system() == 'Windows':
+    folder = "C:/Users/Rmizu/Desktop/220810"
+elif platform.system() == 'Darwin':
+    folder = '/users/rmizu/Desktop'
 # =============================================================
 tdate = '20' + folder[-6:]
 pRAW = os.listdir(folder)
