@@ -19,16 +19,15 @@ elif platform.system() == 'Darwin':
 # =============================================================
 tdate = '20' + folder[-6:]
 pRAW = os.listdir(folder)
-data = pandas.read_csv(pNotesAnnealing)
+# data = pandas.read_csv(pNotesAnnealing)
 for f in pRAW:
     if f.endswith('ibw') and f.startswith('RM'):
-        sample = re.findall(r'[A-Z]{2}\d{6}[A-Z]{2}\d{2}', f)
-        sampleName = sample[0][0:2] + '20' + sample[0][2:]
-        prepost = re.findall(r'P[a-z]{2,3}', f)
-        imNum = re.findall(r'\d{4}', f)[-1][-2:]
-        newName = [tdate, proj, initials, tData, sampleName, prepost[0], imNum]
-        newName = '_'.join(newName)
-        newName = newName + '.ibw'
+        sample = re.findall(r'[A-Z]{2}\d{6}[A-Z]{2}\d{2}', f)[0]
+        sampleName = sample[0:2] + '20' + sample[2:]
+        endPhrase = re.findall(r'P[A-Za-z]{2,3}\d{2,}', f)
+        prepost = re.findall(r'[A-Za-z]+', endPhrase[0])[0]
+        imNum = re.findall(r'[^(A-Za-z)]+', endPhrase[0])[0][-2:]
+        newName = "_".join([tdate, proj, initials, tData, sampleName, prepost, imNum]) + 'ibw'
         newName = os.path.join(folder, newName)
         oldName = os.path.join(folder, f)
         print(f"Old Name: {oldName}")
@@ -37,4 +36,5 @@ for f in pRAW:
     # print(data.loc[:, "Sample"])
 
 print("Files Have Been Renamed")
+# print(data)
 # 20220803_CuPcAnnealing_RM_AFM_RM20220701GL02B_Post_13
