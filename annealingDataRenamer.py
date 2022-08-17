@@ -16,6 +16,7 @@ if platform.system() == 'Windows':
 elif platform.system() == 'Darwin':
     folder = '/Users/rmizu/desktop'
     folder = os.path.join(folder, folder_on_Desktop)
+    saveFolder = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/RAW'
     pNotesAnnealing = '/Users/rmizu/LocalStorage/Repositories/R/dataAFMrm/csv/NotesForRM20220701GL0XXSeries.csv'
 # =============================================================
 tdate = '20' + folder[-6:]
