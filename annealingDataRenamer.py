@@ -1,6 +1,6 @@
 import os
 import re
-import pandas
+# import pandas
 import platform
 # ==============================================================
 proj = 'CuPcAnnealing'
