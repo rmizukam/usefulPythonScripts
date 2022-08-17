@@ -6,11 +6,12 @@ import platform
 proj = 'CuPcAnnealing'
 initials = 'RM'
 tData = 'AFM'
-folder_on_Desktop = "220812"
+folder_on_Desktop = "220816"
 # =============================================================
 if platform.system() == 'Windows':
     folder = "C:/Users/Rmizu/Desktop"
     folder = os.path.join(folder, folder_on_Desktop)
+    saveFolder = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/RAW'
     pNotesAnnealing = '../../R/dataAFMrm/csv/NotesForRM20220701GL0XXSeries.csv'
 elif platform.system() == 'Darwin':
     folder = '/Users/rmizu/desktop'
@@ -27,11 +28,12 @@ for f in pRAW:
         endPhrase = re.findall(r'P[A-Za-z]{2,3}\d{2,}', f)
         prepost = re.findall(r'[A-Za-z]+', endPhrase[0])[0]
         imNum = re.findall(r'[^(A-Za-z)]+', endPhrase[0])[0][-2:]
-        newName = "_".join([tdate, proj, initials, tData, sampleName, prepost, imNum]) + 'ibw'
-        newName = os.path.join(folder, newName)
+        newName = "_".join([tdate, proj, initials, tData, sampleName, prepost, imNum]) + '.ibw'
+        newName = os.path.join(saveFolder, newName)
         oldName = os.path.join(folder, f)
         print(f"Old Name: {oldName}")
         print(f"New Name: {newName}")
+        
         os.rename(oldName, newName)
     # print(data.loc[:, "Sample"])
 
