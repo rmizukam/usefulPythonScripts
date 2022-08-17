@@ -34,7 +34,6 @@ for f in pRAW:
         oldName = os.path.join(folder, f)
         print(f"Old Name: {oldName}")
         print(f"New Name: {newName}")
-        
         os.rename(oldName, newName)
     # print(data.loc[:, "Sample"])
 
