@@ -24,10 +24,10 @@ pRAW = os.listdir(folder)
 # data = pandas.read_csv(pNotesAnnealing)
 for f in pRAW:
     if f.endswith('ibw') and f.startswith('RM'):
-        sample = re.findall(r'[A-Z]{2}\d{6}[A-Z]{2}\d{2}', f)[0]
-        sampleName = sample[0:2] + '20' + sample[2:]
         endPhrase = re.findall(r'P[A-Za-z]{2,3}\d{2,}', f)
         prepost = re.findall(r'[A-Za-z]+', endPhrase[0])[0]
+        if prepost == 'Pos':
+            prepost = 'Post'
         imNum = re.findall(r'[^(A-Za-z)]+', endPhrase[0])[0][-2:]
         newName = "_".join([tdate, proj, initials, tData, sampleName, prepost, imNum]) + '.ibw'
         newName = os.path.join(saveFolder, newName)
