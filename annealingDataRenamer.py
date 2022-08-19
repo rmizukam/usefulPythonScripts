@@ -7,9 +7,9 @@ proj = 'CuPcAnnealing'
 initials = 'RM'
 tData = 'AFM'
 folder_on_Desktop = "220817"
-inLab = True 
+labComputer = False
 # =============================================================
-if inLab :
+if labComputer:
     folder = "C:/Users/014443024/Desktop"
     folder = os.path.join(folder, folder_on_Desktop)
     saveFolder = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RAW'
