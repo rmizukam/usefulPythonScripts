@@ -6,7 +6,7 @@ import platform
 proj = 'CuPcAnnealing'
 initials = 'RM'
 tData = 'AFM'
-folder_on_Desktop = "220817"
+folder_on_Desktop = "220819"
 labComputer = False
 # =============================================================
 if labComputer:
