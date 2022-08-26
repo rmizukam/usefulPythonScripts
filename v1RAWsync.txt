@@ -1,0 +1,15 @@
+import os
+import shutil
+import platform
+
+labComp = False
+
+if platform.system() == 'Darwin':
+    RAWCloudPath = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/RAW'
+    RAWLocalPath = '/Users/rmizu/LocalStorage/Repositories/RAW'
+elif platform.system() == 'Windows' and not labComp:
+    RAWCloudPath = ''
+    RAWLocalPath = ''
+
+for file in os.listdir(RAWCloudPath):
+    shutil.copy2(os.path.join(RAWCloudPath, file), RAWLocalPath)
