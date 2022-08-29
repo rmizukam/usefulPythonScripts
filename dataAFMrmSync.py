@@ -8,12 +8,17 @@ from functions import choice_for_sync
 # print(os.getcwd())
 # onMac = '/Users/rmizu/LocalStorage/Repositories/Python/usefulPythonScripts'
 # onPC = 'C:\Repositories\Python\usefulPythonScripts'
+inLab = False
 
 if platform.system() == 'Windows': 
-    # Sync files from PC (at home) to CLOUD
-    # HOME PC -> CLOUD
-    dataAFMrmCloudPath = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/RProject/dataAFMrm'
-    dataAFMrmLocalPath = 'C:/Repositories/R/dataAFMrm'
+    if inLab == True:
+        dataAFMrmLocalPath = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RProject/dataAFMrm'
+        dataAFMrmLocalPath = 'C:/Users/014443024/Desktop/Repositories/R/dataAFMrm'
+    else:
+        # Sync files from PC (at home) to CLOUD
+        # HOME PC -> CLOUD
+        dataAFMrmCloudPath = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/RProject/dataAFMrm'
+        dataAFMrmLocalPath = 'C:/Repositories/R/dataAFMrm'
 elif platform.system() == 'Darwin':
     # Will Sync files Locally saved on mac to files save to CLOUD
     # MAC -> CLOUD
