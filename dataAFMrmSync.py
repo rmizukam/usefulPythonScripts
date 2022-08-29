@@ -1,11 +1,11 @@
 #pip install dirsync
-
 # will sync 
 import os
 from dirsync import sync
 import platform
+from functions import choice_for_sync
 
-print(os.getcwd())
+# print(os.getcwd())
 # onMac = '/Users/rmizu/LocalStorage/Repositories/Python/usefulPythonScripts'
 # onPC = 'C:\Repositories\Python\usefulPythonScripts'
 
@@ -20,15 +20,13 @@ elif platform.system() == 'Darwin':
     dataAFMrmCloudPath = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/RProject/dataAFMrm'
     dataAFMrmLocalPath = '/Users/rmizu/LocalStorage/Repositories/R/dataAFMrm'
 
-choice_for_sync = input('Choose Option\n\
-0) Difference Checker\n\
-1) Source = Cloud, Destination = Local\n\
-2) Source = Local, Destination = Cloud\n\
-your choice here: ')
+
+answered = False
+choice = choice_for_sync()
 
 if choice_for_sync == '0':
     sync(dataAFMrmCloudPath, dataAFMrmLocalPath, "diff")
-# elif choice_for_sync == '1':
-#     sync(dataAFMrmLocalPath, dataAFMrmCloudPath, "sync")
-# elif choice_for_sync == '2':
-#     sync(dataAFMrmCloudPath, dataAFMrmLocalPath, "sync")
+elif choice_for_sync == '1':
+    sync(dataAFMrmLocalPath, dataAFMrmCloudPath, "sync")
+elif choice_for_sync == '2':
+    sync(dataAFMrmCloudPath, dataAFMrmLocalPath, "sync")
