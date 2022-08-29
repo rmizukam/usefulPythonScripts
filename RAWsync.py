@@ -1,20 +1,18 @@
 import os
+import platform
 from dirsync import sync
 
 lab2Personal = True  # set as true if local folder is behind cloud folder
 
-# print(os.getcwd())
-onMac = '/Users/rmizu/LocalStorage/Repositories/Python/usefulPythonScripts'
-onPC = ''
 
-if os.getcwd() == onMac:
+if platform.system() == 'Darwin':
     # CLOUD -> MAC
     RAWCloudPath = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/RAW'
     RAWLocalPath = '/Users/rmizu/LocalStorage/Repositories/RAW'
-elif os.getcwd() == onPC:
+elif platform.system() == 'Windows':
     # CLOUD -> HOME PC
-    RAWCloudPath = ''
-    RAWLocalPath = ''
+    RAWCloudPath = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/RAW'
+    RAWLocalPath = 'C:/Repositories/RAW'
 
-sync(RAWCloudPath, RAWLocalPath, 'diff')
+sync(RAWCloudPath, RAWLocalPath, 'sync')
 
