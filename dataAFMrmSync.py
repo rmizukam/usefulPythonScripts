@@ -21,7 +21,6 @@ elif platform.system() == 'Darwin':
     dataAFMrmLocalPath = '/Users/rmizu/LocalStorage/Repositories/R/dataAFMrm'
 
 
-answered = False
 choice = choice_for_sync()
 
 if choice_for_sync == '0':

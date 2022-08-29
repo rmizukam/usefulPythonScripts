@@ -1,9 +1,9 @@
 import os
 import platform
 from dirsync import sync
+from functions import choice_for_sync
 
 lab2Personal = True  # set as true if local folder is behind cloud folder
-
 
 if platform.system() == 'Darwin':
     # CLOUD -> MAC
@@ -14,5 +14,11 @@ elif platform.system() == 'Windows':
     RAWCloudPath = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/RAW'
     RAWLocalPath = 'C:/Repositories/RAW'
 
-sync(RAWCloudPath, RAWLocalPath, 'sync')
+choice = choice_for_sync()
 
+if choice_for_sync == '0':
+    sync(RAWCloudPath, RAWCloudPath, "diff")
+elif choice_for_sync == '1':
+    sync(RAWCloudPath, RAWCloudPath, "sync")
+elif choice_for_sync == '2':
+    sync(RAWCloudPath, RAWCloudPath, "sync")
