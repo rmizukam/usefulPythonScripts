@@ -8,11 +8,11 @@ from functions import choice_for_sync
 # print(os.getcwd())
 # onMac = '/Users/rmizu/LocalStorage/Repositories/Python/usefulPythonScripts'
 # onPC = 'C:\Repositories\Python\usefulPythonScripts'
-inLab = False
+inLab = True
 
 if platform.system() == 'Windows': 
     if inLab == True:
-        dataAFMrmLocalPath = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RProject/dataAFMrm'
+        dataAFMrmCloudPath = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RProject/dataAFMrm'
         dataAFMrmLocalPath = 'C:/Users/014443024/Desktop/Repositories/R/dataAFMrm'
     else:
         # Sync files from PC (at home) to CLOUD
@@ -28,9 +28,9 @@ elif platform.system() == 'Darwin':
 
 choice = choice_for_sync()
 
-if choice_for_sync == '0':
+if choice == '0':
     sync(dataAFMrmCloudPath, dataAFMrmLocalPath, "diff")
-elif choice_for_sync == '1':
+elif choice == '1':
     sync(dataAFMrmLocalPath, dataAFMrmCloudPath, "sync")
-elif choice_for_sync == '2':
+elif choice == '2':
     sync(dataAFMrmCloudPath, dataAFMrmLocalPath, "sync")

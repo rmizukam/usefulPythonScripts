@@ -2,3 +2,5 @@
 .vscode
 ListOfRAWFiles.txt
 test.py
+__pycache__
+
