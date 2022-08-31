@@ -21,9 +21,9 @@ elif platform.system() == 'Windows':
 
 choice = choice_for_sync()
 
-if choice_for_sync == '0':
-    sync(RAWCloudPath, RAWCloudPath, "diff")
-elif choice_for_sync == '1':
-    sync(RAWCloudPath, RAWCloudPath, "sync")
-elif choice_for_sync == '2':
-    sync(RAWCloudPath, RAWCloudPath, "sync")
+if choice == '0':
+    sync(RAWCloudPath, RAWLocalPath, "diff")
+elif choice == '1':
+    sync(RAWCloudPath, RAWLocalPath, "sync")
+elif choice == '2':
+    sync(RAWLocalPath, RAWCloudPath, "sync")
