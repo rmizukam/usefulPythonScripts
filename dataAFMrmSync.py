@@ -8,7 +8,7 @@ from functions import choice_for_sync
 # print(os.getcwd())
 # onMac = '/Users/rmizu/LocalStorage/Repositories/Python/usefulPythonScripts'
 # onPC = 'C:\Repositories\Python\usefulPythonScripts'
-inLab = True
+inLab = False
 
 if platform.system() == 'Windows': 
     if inLab == True:
@@ -29,6 +29,7 @@ elif platform.system() == 'Darwin':
 choice = choice_for_sync()
 
 if choice == '0':
+    # sync(Source, Target)
     sync(dataAFMrmCloudPath, dataAFMrmLocalPath, "diff")
 elif choice == '1':
     sync(dataAFMrmLocalPath, dataAFMrmCloudPath, "sync")

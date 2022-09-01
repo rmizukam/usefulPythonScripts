@@ -3,8 +3,7 @@ import platform
 from dirsync import sync
 from functions import choice_for_sync
 
-lab2Personal = True  # set as true if local folder is behind cloud folder
-inLab = True
+inLab = False
 
 if platform.system() == 'Darwin':
     # CLOUD -> MAC
@@ -22,6 +21,7 @@ elif platform.system() == 'Windows':
 choice = choice_for_sync()
 
 if choice == '0':
+    # sync(source, target)
     sync(RAWCloudPath, RAWLocalPath, "diff")
 elif choice == '1':
     sync(RAWCloudPath, RAWLocalPath, "sync")
