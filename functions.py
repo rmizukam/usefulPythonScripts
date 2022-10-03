@@ -16,3 +16,24 @@ def choice_for_sync():
             )
     print('----------------------------------------------------------------------')
     return userInput
+
+def choice_for_package():
+    answered = False
+    while not answered:
+        userInput = input(
+        'What folder should be synced\n'
+        '0: RAW\n'
+        '1: dataAFMrm\n'
+        '2: cpaAnalysis\n'
+        '3: nanoscopeAFM\n'
+        'Choose selection with number: '
+        )
+        valid_answers = ['0', '1', '2', '3']
+        if userInput in valid_answers:
+            answered = True
+        else:
+            print('invalid selection\n'
+            '----------------------------------------------------------------------'
+            )
+    print('----------------------------------------------------------------------')
+    return userInput
