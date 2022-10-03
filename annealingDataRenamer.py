@@ -6,28 +6,24 @@ import platform
 proj = 'CuPcAnnealing'
 initials = 'RM'
 tData = 'AFM'
-folder_on_Desktop = "220909"
+folder_on_Desktop = "220915"
 labComputer = False
 # =============================================================
-if labComputer:
+if os.path.exists("C:/Users/014443024/Desktop"):
     folder = "C:/Users/014443024/Desktop"
     folder = os.path.join(folder, folder_on_Desktop)
     saveFolder = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RAW'
-    pNotesAnnealing = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RProject/dataAFMrm/csv/NotesForRM20220701GL0XXSeries.csv'
-elif platform.system() == 'Windows':
+elif os.path.exists("C:/Users/Rmizu/Desktop"):
     folder = "C:/Users/Rmizu/Desktop"
     folder = os.path.join(folder, folder_on_Desktop)
     saveFolder = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/RAW'
-    pNotesAnnealing = '../../R/dataAFMrm/csv/NotesForRM20220701GL0XXSeries.csv'
-elif platform.system() == 'Darwin':
+elif os.path.exists('/Users/rmizu/desktop'):
     folder = '/Users/rmizu/desktop'
     folder = os.path.join(folder, folder_on_Desktop)
     saveFolder = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/RAW'
-    pNotesAnnealing = '/Users/rmizu/LocalStorage/Repositories/R/dataAFMrm/csv/NotesForRM20220701GL0XXSeries.csv'
 # =============================================================
 tdate = '20' + folder[-6:]
 pRAW = os.listdir(folder)
-# data = pandas.read_csv(pNotesAnnealing)
 for f in pRAW:
     if f.endswith('ibw') and f.startswith('RM'):
         sample = re.findall(r'[A-Z][A-Z]\d{6}[A-Z]{2}\d{2}[A-Z]*', f)[0]
@@ -46,5 +42,3 @@ for f in pRAW:
     # print(data.loc[:, "Sample"])
 
 print("Files Have Been Renamed")
-# print(data)
-# 20220803_CuPcAnnealing_RM_AFM_RM20220701GL02B_Post_13
