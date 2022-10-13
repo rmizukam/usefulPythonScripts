@@ -6,8 +6,10 @@ import platform
 proj = 'CuPcAnnealing'
 initials = 'RM'
 tData = 'AFM'
-folder_on_Desktop = "220915"
-labComputer = False
+
+folder_on_Desktop = input('Type name of folder that contains data. Must be on the desktop: ')
+
+
 # =============================================================
 if os.path.exists("C:/Users/014443024/Desktop"):
     folder = "C:/Users/014443024/Desktop"
@@ -26,7 +28,7 @@ tdate = '20' + folder[-6:]
 pRAW = os.listdir(folder)
 for f in pRAW:
     if f.endswith('ibw') and f.startswith('RM'):
-        sample = re.findall(r'[A-Z][A-Z]\d{6}[A-Z]{2}\d{2}[A-Z]*', f)[0]
+        sample = re.findall(r'[A-Z][A-Z]\d{6}[A-Za-z]{2}\d{2}[A-Z]*', f)[0]
         sampleName = sample[0:2] + '20' + sample[2:]
         endPhrase = re.findall(r'P[A-Za-z]{2,3}\d{2,}', f)
         prepost = re.findall(r'[A-Za-z]+', endPhrase[0])[0]

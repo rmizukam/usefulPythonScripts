@@ -21,6 +21,7 @@ elif platform.system() == 'Darwin':
     CloudPath = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/'
     LocalPath = '/Users/rmizu/LocalStorage/Repositories/'
     print('You are logged in on the PERSONAL MAC LAPTOP')
+    print('----------------------------------------------------------------------')
 
 rPackage = choice_for_package()
 
@@ -37,15 +38,17 @@ elif rPackage == '3':
     LocalPath = LocalPath + 'R/nanoscopeAFM/'
     CloudPath = CloudPath + 'R/nanoscopeAFM/'
 
-
 choice = choice_for_sync()
-print(LocalPath)
-print(CloudPath)
 
-# if choice == '0':
-#     # sync(Source, Target)
-#     sync(CloudPath, LocalPath, "diff")
-# elif choice == '1':
-#     sync(LocalPath, CloudPath, "sync")
-# elif choice == '2':
-#     sync(CloudPath, LocalPath, "sync")
+if choice == '0':
+    print('Source: ', CloudPath)
+    print('Target: ', LocalPath)
+    sync(CloudPath, LocalPath, "diff")
+elif choice == '1':
+    print('Source: ', LocalPath)
+    print('Target: ', CloudPath)
+    sync(CloudPath, LocalPath, "sync")
+elif choice == '2':
+    print('Source: ', CloudPath)
+    print('Target: ', LocalPath)
+    sync(LocalPath, CloudPath, "sync")
