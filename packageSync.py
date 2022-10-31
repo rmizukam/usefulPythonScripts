@@ -45,10 +45,10 @@ if choice == '0':
     print('Target: ', LocalPath)
     sync(CloudPath, LocalPath, "diff")
 elif choice == '1':
-    print('Source: ', LocalPath)
-    print('Target: ', CloudPath)
-    sync(CloudPath, LocalPath, "sync")
-elif choice == '2':
     print('Source: ', CloudPath)
     print('Target: ', LocalPath)
+    sync(CloudPath, LocalPath, "sync")
+elif choice == '2':
+    print('Source: ', LocalPath)
+    print('Target: ', CloudPath)
     sync(LocalPath, CloudPath, "sync")
