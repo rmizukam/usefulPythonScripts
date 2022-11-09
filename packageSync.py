@@ -3,7 +3,7 @@ import os
 from dirsync import sync
 import platform
 from functions import choice_for_sync, choice_for_package
-
+print('----------------------------------------------------------------------')
 if platform.system() == 'Windows':
     if os.path.exists('C:/Users/014443024/Desktop/Repositories/'):
         LocalPath = 'C:/Users/014443024/Desktop/Repositories/'
@@ -20,7 +20,7 @@ elif platform.system() == 'Darwin':
     CloudPath = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/'
     LocalPath = '/Users/rmizu/LocalStorage/Repositories/'
     print('You are logged in on the PERSONAL MAC LAPTOP')
-    print('----------------------------------------------------------------------')
+print('----------------------------------------------------------------------')
 
 rPackage = choice_for_package()
 
