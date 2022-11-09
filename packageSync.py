@@ -1,5 +1,4 @@
 #pip install dirsync
-# will sync 
 import os
 from dirsync import sync
 import platform
@@ -37,6 +36,9 @@ elif rPackage == '2':
 elif rPackage == '3':
     LocalPath = LocalPath + 'R/nanoscopeAFM/'
     CloudPath = CloudPath + 'R/nanoscopeAFM/'
+elif rPackage == '4':
+    LocalPath = LocalPath + 'R/SOP-collection/'
+    CloudPath = CloudPath + 'R/SOP-collection/'
 
 choice = choice_for_sync()
 

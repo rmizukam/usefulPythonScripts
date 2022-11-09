@@ -26,6 +26,7 @@ def choice_for_package():
         '1: dataAFMrm\n'
         '2: cpaAnalysis\n'
         '3: nanoscopeAFM\n'
+        '4: SOP-collection\n'
         'Choose selection with number: '
         )
         valid_answers = ['0', '1', '2', '3']
