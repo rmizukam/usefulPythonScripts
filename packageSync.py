@@ -39,6 +39,11 @@ elif rPackage == '3':
 elif rPackage == '4':
     LocalPath = LocalPath + 'R/SOP-collection/'
     CloudPath = CloudPath + 'R/SOP-collection/'
+elif rPackage == '5':
+    LocalPath = 'C:/Repositories/'
+    CloudPath = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/PHYS-545-MATERIALS_LAB/'
+    LocalPath = LocalPath + 'R/Phys545-FinalProject/'
+    CloudPath = CloudPath + 'R/Phys545-FinalProject/'
 
 choice = choice_for_sync()
 
