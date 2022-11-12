@@ -27,9 +27,10 @@ def choice_for_package():
         '2: cpaAnalysis\n'
         '3: nanoscopeAFM\n'
         '4: SOP-collection\n'
+        '5: Phys545-FinalProject\n'
         'Choose selection with number: '
         )
-        valid_answers = ['0', '1', '2', '3']
+        valid_answers = ['0', '1', '2', '3', '4', '5']
         if userInput in valid_answers:
             answered = True
         else:
