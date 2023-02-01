@@ -15,14 +15,17 @@ if os.path.exists("C:/Users/014443024/Desktop"):
     folder = "C:/Users/014443024/Desktop"
     folder = os.path.join(folder, folder_on_Desktop)
     saveFolder = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RAW'
+    genImgFolder = 'C:/Users/014443024/OneDrive - CSULB/RyanMizukami/RAW'
 elif os.path.exists("C:/Users/Rmizu/Desktop"):
     folder = "C:/Users/Rmizu/Desktop"
     folder = os.path.join(folder, folder_on_Desktop)
     saveFolder = 'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/RAW'
+    genImgFolder =  'C:/Users/Rmizu/Documents/OneDrive - CSULB/RyanMizukami/General-Images/01)ScanLocationAnnealingProject'
 elif os.path.exists('/Users/rmizu/desktop'):
     folder = '/Users/rmizu/desktop'
     folder = os.path.join(folder, folder_on_Desktop)
     saveFolder = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/RAW'
+    genImgFolder = '/Users/rmizu/Library/CloudStorage/OneDrive-CSULB/RyanMizukami/General-Images/01)ScanLocationAnnealingProject'
 # =============================================================
 tdate = '20' + folder[-6:]
 pRAW = os.listdir(folder)
@@ -41,6 +44,12 @@ for f in pRAW:
         print(f"Old Name: {oldName}")
         print(f"New Name: {newName}")
         os.rename(oldName, newName)
+    elif f.endswith('tiff'):
+        genImgSaveFolder = os.path.join(genImgFolder,folder_on_Desktop)
+        oldName = os.path.join(folder, f)
+        newName = os.path.join(genImgSaveFolder, f)
+        os.rename(oldName, newName)
     # print(data.loc[:, "Sample"])
 
+os.remove(genImgFolder)
 print("Files Have Been Renamed")
